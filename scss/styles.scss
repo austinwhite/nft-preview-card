@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit&display=swap");
+
+$soft-blue: hsl(215, 51%, 70%);
+$cyan: hsl(178, 100%, 50%);
+$main-bg-color: hsl(217, 54%, 11%);
+$card-bg-color: hsl(216, 50%, 16%);
+$line-color: hsl(215, 32%, 27%);
+$white: hsl(0, 0%, 100%);
+
+$font-family: Outfit, sans-serif;
+$font-size: 1.125rem;
+$font-weights: (
+  "light": 300,
+  "normal": 400,
+  "bold": 600,
+);
+
+@mixin formatText($type: none) {
+  font-family: $font-family;
+  font-size: $font-size;
+  color: $white;
+
+  @if $type == cost {
+    font-size: 1rem;
+    color: $cyan;
+    font-weight: map-get($font-weights, "bold");
+  } @else if $type == nft-name {
+    font-size: 1.4rem;
+    font-weight: map-get($font-weights, "bold");
+  } @else if $type == time {
+    color: $soft-blue;
+    font-size: 1rem;
+    font-weight: map-get($font-weights, "normal");
+  } @else if $type == description {
+    color: $soft-blue;
+    font-weight: map-get($font-weights, "light");
+  } @else if $type == attrib {
+    font-size: 1rem;
+  } @else if $type == attrib-left {
+    color: $soft-blue;
+    font-size: 1rem;
+  }
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  background-color: $main-bg-color;
+  @include formatText();
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+#card {
+  background-color: $card-bg-color;
+  max-width: 350px;
+  min-width: 250px;
+  border-radius: 15px;
+  margin: 1rem 1rem;
+  
+
+  #card-inset {
+    margin: calc((100% - 86.28%) / 2);
+
+    #nft-hero {
+      aspect-ratio: 1;
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    #card-info {
+      display: flex;
+      flex-direction: column;
+
+      #nft-name {
+        @include formatText(nft-name);
+        margin-top: 1.7rem;
+      }
+
+      #nft-description {
+        @include formatText(description);
+        margin-top: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      #cost-time {
+        display: flex;
+        height: 20px;
+        justify-content: space-between;
+
+        #nft-cost {
+          display: flex;
+          align-items: center;
+
+          #eth-icon {
+            height: 18px;
+            width: 11px;
+          }
+
+          #eth-amount {
+            @include formatText(cost);
+            padding-left: 0.4rem;
+          }
+        }
+
+        #time-left {
+          display: flex;
+          align-items: center;
+
+          #clock-icon {
+            width: 16px;
+            height: 16px;
+          }
+
+          #time-left-text {
+            @include formatText(time);
+            padding-left: 0.4rem;
+          }
+        }
+      }
+
+      #divider {
+        border: 1px solid $line-color;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        width: 100%;
+        margin-top: 1.25rem;
+      }
+
+      #nft-attribution {
+        display: flex;
+        align-items: center;
+        @include formatText(attrib);
+
+        #nft-attribution-img {
+          width: 2.06rem;
+          height: 2.06rem;
+          border: 1px solid $white;
+          border-radius: 50%;
+        }
+
+        #nft-attribution-text {
+          padding-left: 1rem;
+
+          #nft-attribution-left {
+            @include formatText(attrib-left);
+          }
+        }
+      }
+    }
+  }
+}
+
+.attribution {
+  text-align: center;
+  font-size: 11px;
+  color: $soft-blue;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

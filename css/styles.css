@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit&display=swap");
+html, body {
+  margin: 0;
+  height: 100%; }
+
+body {
+  background-color: #0d192b;
+  font-family: Outfit, sans-serif;
+  font-size: 1.125rem;
+  color: white; }
+
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%; }
+
+#card {
+  background-color: #14253d;
+  max-width: 350px;
+  min-width: 250px;
+  border-radius: 15px;
+  margin: 1rem 1rem; }
+  #card #card-inset {
+    margin: calc((100% - 86.28%) / 2); }
+    #card #card-inset #nft-hero {
+      aspect-ratio: 1;
+      width: 100%;
+      border-radius: 8px; }
+    #card #card-inset #card-info {
+      display: flex;
+      flex-direction: column; }
+      #card #card-inset #card-info #nft-name {
+        font-family: Outfit, sans-serif;
+        font-size: 1.125rem;
+        color: white;
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-top: 1.7rem; }
+      #card #card-inset #card-info #nft-description {
+        font-family: Outfit, sans-serif;
+        font-size: 1.125rem;
+        color: white;
+        color: #8bacda;
+        font-weight: 300;
+        margin-top: 0.5rem;
+        margin-bottom: 1.5rem; }
+      #card #card-inset #card-info #cost-time {
+        display: flex;
+        height: 20px;
+        justify-content: space-between; }
+        #card #card-inset #card-info #cost-time #nft-cost {
+          display: flex;
+          align-items: center; }
+          #card #card-inset #card-info #cost-time #nft-cost #eth-icon {
+            height: 18px;
+            width: 11px; }
+          #card #card-inset #card-info #cost-time #nft-cost #eth-amount {
+            font-family: Outfit, sans-serif;
+            font-size: 1.125rem;
+            color: white;
+            font-size: 1rem;
+            color: #00fff7;
+            font-weight: 600;
+            padding-left: 0.4rem; }
+        #card #card-inset #card-info #cost-time #time-left {
+          display: flex;
+          align-items: center; }
+          #card #card-inset #card-info #cost-time #time-left #clock-icon {
+            width: 16px;
+            height: 16px; }
+          #card #card-inset #card-info #cost-time #time-left #time-left-text {
+            font-family: Outfit, sans-serif;
+            font-size: 1.125rem;
+            color: white;
+            color: #8bacda;
+            font-size: 1rem;
+            font-weight: 400;
+            padding-left: 0.4rem; }
+      #card #card-inset #card-info #divider {
+        border: 1px solid #2f415b;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        width: 100%;
+        margin-top: 1.25rem; }
+      #card #card-inset #card-info #nft-attribution {
+        display: flex;
+        align-items: center;
+        font-family: Outfit, sans-serif;
+        font-size: 1.125rem;
+        color: white;
+        font-size: 1rem; }
+        #card #card-inset #card-info #nft-attribution #nft-attribution-img {
+          width: 2.06rem;
+          height: 2.06rem;
+          border: 1px solid white;
+          border-radius: 50%; }
+        #card #card-inset #card-info #nft-attribution #nft-attribution-text {
+          padding-left: 1rem; }
+          #card #card-inset #card-info #nft-attribution #nft-attribution-text #nft-attribution-left {
+            font-family: Outfit, sans-serif;
+            font-size: 1.125rem;
+            color: white;
+            color: #8bacda;
+            font-size: 1rem; }
+
+.attribution {
+  text-align: center;
+  font-size: 11px;
+  color: #8bacda; }
+
+.attribution a {
+  color: #3e52a3; }
